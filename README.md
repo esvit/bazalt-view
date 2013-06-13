@@ -1,6 +1,6 @@
-bazalt-orm
-==========
+bazalt-view
+===========
 
-[![Build Status](https://travis-ci.org/esvit/bazalt-orm.png)](https://travis-ci.org/esvit/bazalt-orm) [![Coverage Status](https://coveralls.io/repos/esvit/bazalt-orm/badge.png?branch=master)](https://coveralls.io/r/esvit/bazalt-orm?branch=master)
+[![Build Status](https://travis-ci.org/esvit/bazalt-view.png)](https://travis-ci.org/esvit/bazalt-view) [![Coverage Status](https://coveralls.io/repos/esvit/bazalt-view/badge.png)](https://coveralls.io/r/esvit/bazalt-view)
 
-Simple ORM on PHP
+Simple View for MVC
