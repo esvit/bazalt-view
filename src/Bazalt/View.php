@@ -71,7 +71,7 @@ class View implements \ArrayAccess
         return null;
     }
 
-    public static function engine($extension, Engine $engine = null)
+    public static function engine($extension, View\Engine $engine = null)
     {
         if ($engine != null) {
             /* як виявилось потрібна змога заміняти шаблонізатори
