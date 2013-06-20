@@ -280,6 +280,6 @@ class View implements \ArrayAccess
     }
 }
 
-View::engine('html' => new Engine());
-View::engine('php' => new PHP\Engine());
-View::engine('twg' => new Twig\Engine());
+View::engine('html', new View\Engine());
+View::engine('php', new View\PHP\Engine());
+View::engine('twg', new View\Twig\Engine());
