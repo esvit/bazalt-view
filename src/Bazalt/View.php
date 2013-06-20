@@ -7,10 +7,7 @@ class View implements \ArrayAccess
     /**
      * @var array Список підтримуємих шаблонізаторів
      */
-    protected static $engines = [
-        'html' => 'Bazalt\View\Engine',
-        'php'  => 'Bazalt\View\PHP\Engine'
-    ];
+    protected static $engines = [];
 
     protected static $rootView = null;
 
@@ -238,7 +235,7 @@ class View implements \ArrayAccess
 
         //\Framework\Core\Logger::getInstance()->info('Show template "' . $viewTemplate['file'] . '" from folder: "' . $viewTemplate['folder'] . '"');
 
-        $engine = new $viewTemplate['engine']();
+        $engine = $viewTemplate['engine'];
         $content = $engine->fetch($viewTemplate['folder'], $viewTemplate['file'], $this);
 
         if ($vars != null) {
@@ -282,3 +279,7 @@ class View implements \ArrayAccess
         unset($this->assignedVars[$offset]);
     }
 }
+
+View::engine('html' => new Engine());
+View::engine('php' => new PHP\Engine());
+View::engine('twg' => new Twig\Engine());
