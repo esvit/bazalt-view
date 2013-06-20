@@ -21,7 +21,7 @@ class Engine extends \Bazalt\View\Engine
             $loader = new \Twig_Loader_Filesystem($folder);
             $this->twig = new \Twig_Environment($loader, $this->options);
 
-            if (DEBUG) {
+            if (isset($this->options['debug']) && $this->options['debug']) {
                 $this->twig->addExtension(new \Twig_Extension_Debug());
             }
         }
@@ -37,27 +37,17 @@ class Engine extends \Bazalt\View\Engine
             'cache' => TEMP_DIR . '/templates/Twig'
         ));
 
-
-        //$vars['bazalt_cms_locale_domain'] = $this->localeDomain;
-
         return $twig->render($string, $vars);
     }
 
-    public function fetch($folder, $file, View\Scope $view)
+    public function fetch($folder, $file, \Bazalt\View $view)
     {
         $vars = $view->variables();
-
-        $vars['bazalt_cms_locale_domain'] = $this->localeDomain;
 
         $twig = $this->getTwig($folder);
 
         $template = $twig->loadTemplate($file);
         $content = $template->render($vars);
         return $content;
-    }
-
-    public function setLocaleDomain($domain)
-    {
-        $this->localeDomain = $domain;
     }
 }
