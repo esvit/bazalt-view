@@ -1,6 +1,6 @@
 <?php
 
-namespace Bazalt\View\PHP;
+namespace Bazalt\View\Twig;
 
 class Engine extends \Bazalt\View\Engine
 {
